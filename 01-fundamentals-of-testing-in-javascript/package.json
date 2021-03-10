@@ -1,0 +1,12 @@
+{
+  "name": "01-fundamentals-of-testing-in-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jest.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Hudson Holanda <hudsonholanda55@gmail.com> (https://lzhudson.github.io/)",
+  "license": "MIT"
+}
