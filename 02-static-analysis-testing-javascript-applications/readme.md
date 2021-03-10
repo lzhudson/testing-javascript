@@ -35,3 +35,12 @@ npm install eslint --save-dev
   ```
   npx eslint .
   ```
+
+## 02 - Learn use the eslint extension in vscode
+
+1 - Install eslint extension in vscode
+
+2 - Fixing archives via cli
+````
+npx eslint . --fix
+````
