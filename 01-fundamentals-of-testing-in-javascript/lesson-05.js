@@ -6,15 +6,6 @@ async function sumTest() {
   expect(result).toBe(expected);
 }
 test('sumAsync adds numbers asynchronously', sumTest);
-async function test(title, callback) {
-  try {
-    await callback();
-    console.log(`✔ ${title}`)
-  } catch (error) {
-    console.error(`✗ ${title}`);
-    console.error(error);
-  }
-}
 
 async function subtractTest() {
   const result = await subtractAsync(7, 3);
@@ -22,13 +13,3 @@ async function subtractTest() {
   expect(result).toBe(expected);
 }
 test('subtractAsync subtracts numbers asynchronously', subtractTest);
-
-function expect(actual) {
-  return {
-    toBe(expected) {
-      if(actual !== expected) {
-        throw new Error(`${actual} is not equal to ${expected}`);
-      }
-    }
-  }
-}
