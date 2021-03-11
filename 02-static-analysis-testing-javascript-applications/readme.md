@@ -194,7 +194,7 @@ npm run format
 ```
 
 
-## 06 - Install Prettier on VSCode
+## 07 - Install Prettier on VSCode
 1 - Install prettier extensions
 
 2 - Add specify configures in editor config:
