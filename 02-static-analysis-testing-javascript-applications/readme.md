@@ -74,3 +74,53 @@ npx eslint . --fix
   }
 }
 ```
+
+## 04 - Eslint run with npm scripts
+
+1 - Create scripts to run eslint
+```json
+{
+  "name": "static-testing-tools",
+  "private": true,
+  "author": "Kent C. Dodds (http://kentcdodds.com/)",
+  "license": "GPLv3",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "eslint": "^7.21.0"
+  }
+}
+```
+
+2 - Add folder node_modules and dist to ignore eslint cli:
+
+.eslintignore
+```text
+node_modules
+dist
+```
+
+3 - Or additional ignore path in npm script
+```json
+{
+  "name": "static-testing-tools",
+  "private": true,
+  "author": "Kent C. Dodds (http://kentcdodds.com/)",
+  "license": "GPLv3",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "lint": "eslint --ignore-path .gitignore . --fix"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "eslint": "^7.21.0"
+  }
+}
+```
