@@ -124,3 +124,38 @@ dist
   }
 }
 ```
+
+## 05 - Formatting code with prettier
+1 - Install prettier
+
+2 - Run prettier to show code formatted:
+```bash
+npx prettier src/example.js
+```
+This is output is archive formatted
+
+3 - Run prettier to format code:
+```bash
+npx prettier src/example.js --write
+```
+
+4 - Create npm script to format all code .js or .json:
+```json
+{
+  "name": "static-testing-tools",
+  "private": true,
+  "author": "Kent C. Dodds (http://kentcdodds.com/)",
+  "license": "GPLv3",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "lint": "eslint .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\""
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "eslint": "^7.21.0"
+  }
+}
+```
