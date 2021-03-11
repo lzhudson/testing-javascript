@@ -205,3 +205,16 @@ npm run format
  "editor.formatOnSave": true
 }
 ````
+
+## 08 Resolve conflicts between eslint and prettier
+1 - Install ``eslint-config-prettier``:
+```bash
+npm install --save-dev eslint-config-prettier
+```
+2 - Enable in property ``"extends"``:
+```.eslintrc```
+```json
+{
+  "extends": ["eslint:recommended", "eslint-config-prettier"],
+}
+```
