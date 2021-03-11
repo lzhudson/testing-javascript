@@ -159,3 +159,36 @@ npx prettier src/example.js --write
   }
 }
 ```
+
+# 05 - Configure prettier
+1 - Enter prettier playground and select your configuring options:
+
+[Prettier Playground](https://prettier.io/playground/#N4Igxg9gdgLgprEAuc0DOMAEBXNcBOUAhgLZyYC8mAOiAGb5wAmTAnrQNzWysAOcEOjjyFS5ChJogM+AJZQA5p27dZQgBQBCdbREA3WWDgB1CPgDWBWpnmZiBhURhmAlC8zBumTAHofmVghsTAALIj1yIihMCAAbJkwAI3wIAHcRTCQAWh0oAF8VKEgoDEwFRjgYeQVKKRC4WNiIZSL0OLgAOiaFdQADABJgcrhK6rzMVLN4zV6XLigAbQBGABpMACY1gGYAXQ66MwBRIjAQ9XUAD3cKAD5MYrR2rogeq7nuEBWQCF4q9GRQER8ClUgAFIEINDIEBEWKpIisKFfZInSwwADKvBO1WQdFheC+cBIiWYTGYABkogpsEQFHAAGJmEhOKqKaFEbDOT4gEIwEixYwhWTwNBYozoyHC2QGGCsaFgNBIkDyEQwUH4WnM3H4uBfABWaAuACENWA0eixOT5HBtbECSADRd0dVYnAAIrYCDwW32rH4ETQxJEEmxbm8OSwYyyJgwELIAAcqxA4YgeGMGt47LhCKVAEdPfB1T8oSgiGgslARmSmNzGPnZIx1ZqiD7ddIibJkDB8Ng22gXe6CzakN3e18YMGozG40gtuONbJYtUAMIQEha0uNbm4OAAFWDJdHbb0vYAklAybB0WA5L8AIIX9Gy12tvJ5IA)
+
+2 - Select options and copy options to add in ``.prettierrc`` archive:
+```json 
+{
+  "arrowParens": "always",
+  "bracketSpacing": false,
+  "embeddedLanguageFormatting": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 81,
+  "proseWrap": "always",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false
+}
+```
+
+3 - Run npm script to format code
+```bash
+npm run format
+```
