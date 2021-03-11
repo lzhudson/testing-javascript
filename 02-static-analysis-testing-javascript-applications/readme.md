@@ -192,3 +192,16 @@ npx prettier src/example.js --write
 ```bash
 npm run format
 ```
+
+
+## 06 - Install Prettier on VSCode
+1 - Install prettier extensions
+
+2 - Add specify configures in editor config:
+```settings.json```
+````json
+{
+ "editor.defaultFormatter": "esbenp.prettier-vscode",
+ "editor.formatOnSave": true
+}
+````
