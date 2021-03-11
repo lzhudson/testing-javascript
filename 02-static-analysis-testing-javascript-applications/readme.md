@@ -52,3 +52,25 @@ npm install eslint --save-dev
 ````
 npx eslint . --fix
 ````
+
+## 03 - Eslint use pre-built configuration extends
+
+1 - Add in eslint config property extends and remove rule for no overwrite configs by extends.
+```json
+{
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "strict": ["error", "never"],
+  },
+  "env": {
+    "browser": true
+  }
+}
+```
