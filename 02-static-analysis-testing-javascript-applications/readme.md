@@ -218,3 +218,42 @@ npm install --save-dev eslint-config-prettier
   "extends": ["eslint:recommended", "eslint-config-prettier"],
 }
 ```
+
+## 09 - Validate all files are properyly formatted
+1 - Create script ```check-format``` to check files:
+```json
+{
+  "scripts": {
+		"build": "babel src --out-dir dist",
+		"lint": "eslint .",
+		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+		"check-format": "prettier --ignore-path .gitignore --list-different \"**/*.+(js|json)\"",
+	},
+}
+```
+2 -  Create script ```validate``` to run diverse scripts:
+```json
+{
+  "scripts": {
+		"build": "babel src --out-dir dist",
+		"lint": "eslint .",
+		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+		"check-format": "prettier --ignore-path .gitignore --list-different \"**/*.+(js|json)\"",
+		"validate": "npm run check-format && npm run lint && npm run build"
+	},
+}
+```
+
+3 - Reduce script length and reuse:
+```json
+{
+  "scripts": {
+		"build": "babel src --out-dir dist",
+		"lint": "eslint .",
+		"prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
+		"format": "npm run prettier -- --write",
+		"check-format": "npm run prettier -- --list-different",
+		"validate": "npm run check-format && npm run lint && npm run build"
+	},
+}
+```
