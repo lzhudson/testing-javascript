@@ -257,3 +257,66 @@ npm install --save-dev eslint-config-prettier
 	},
 }
 ```
+## 10 - Using Typescript
+
+1 - Install Typescript
+```bash
+npm install --save-dev typescript
+```
+
+2 - Create file to configure typescript:
+```tsconfig.json```
+```json
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "./src"
+  }
+}
+```
+3 - Create npm script to check files typescript
+```json
+{
+  "scripts": {
+    "check-types": "tsc",
+  }
+}
+```
+
+4 - Install ```@babel/preset-typescript``` to convert .ts files in .js files:
+```bash
+npm install --save-dev @babel/preset-typescript
+```
+
+5 - Update property **presets** in ```.babelrc``` file:
+```json 
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ]
+}
+```
+
+5 - Update npm script to build archives with extensios **.ts, .js, .jsx**:
+```json 
+{
+  "scripts": {
+    "build": "babel src --extensions .js,.ts,.tsx --out-dir dist",
+  }
+}
+```
+6 - Update npm script to run prettier archives with extensios **.ts, .js, .jsx**:
+```json 
+{
+  "scripts": {
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+  }
+}
