@@ -1,0 +1,25 @@
+{
+	"name": "static-testing-tools",
+	"private": true,
+	"author": "Kent C. Dodds (http://kentcdodds.com/)",
+	"license": "GPLv3",
+	"scripts": {
+		"build": "babel src --extensions .js,.ts,.tsx --out-dir dist",
+		"lint": "eslint .",
+		"check-types": "tsc",
+		"prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+		"format": "npm run prettier -- --write",
+		"check-format": "npm run prettier -- --list-different",
+		"validate": "npm run check-types && npm run check-format && npm run lint && npm run build"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.13.10",
+		"@babel/core": "^7.7.2",
+		"@babel/preset-env": "^7.7.1",
+		"@babel/preset-typescript": "^7.13.0",
+		"eslint": "^7.21.0",
+		"eslint-config-prettier": "^8.1.0",
+		"prettier": "^2.2.1",
+		"typescript": "^4.2.3"
+	}
+}
